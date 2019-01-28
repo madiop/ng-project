@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+  // lastUpdate = new Date();
   
   appareils = [
     {
@@ -34,4 +35,13 @@ export class AppComponent {
   onAllumer(){
     console.log('On allume tout!');
   }
+
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 2000
+    );
+  });
 }

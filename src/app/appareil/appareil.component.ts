@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { StringifyOptions } from 'querystring';
 
 @Component({
@@ -8,8 +8,8 @@ import { StringifyOptions } from 'querystring';
 })
 export class AppareilComponent implements OnInit {
   
-  appareilName: string = 'Fer à repasser';
-  appareilStatus: string = 'éteint';
+  @Input() appareilName: string;
+  @Input() appareilStatus: string;
 
   constructor() { }
 
@@ -18,6 +18,15 @@ export class AppareilComponent implements OnInit {
 
   getStatus(){
     return this.appareilStatus;
+  }
+
+  getColor(){
+    if(this.appareilStatus == 'allumé'){
+      return 'green';
+    }
+    else if(this.appareilStatus == 'éteint'){
+      return 'red';
+    }
   }
 
 }

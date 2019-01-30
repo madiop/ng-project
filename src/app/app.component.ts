@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppareilService } from './services/apareil.services';
+import { AppareilService } from './services/apareil.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +7,9 @@ import { AppareilService } from './services/apareil.services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  isAuth = false;
   appareils: any[];
 
   constructor(private appareilService: AppareilService) {
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
   }
 
   ngOnInit() {
@@ -32,16 +26,5 @@ export class AppComponent {
       return null;
     }
   }
-
-  lastUpdate = new Date();
-
-  // lastUpdate = new Promise((resolve, reject) => {
-  //   const date = new Date();
-  //   setTimeout(
-  //     () => {
-  //       resolve(date);
-  //     }, 2000
-  //   );
-  // });
 
 }

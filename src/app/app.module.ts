@@ -6,23 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyFirstComponent } from './my-first/my-first.component';
 import { AppareilComponent } from './appareil/appareil.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostListItemComponent } from './post-list-item/post-list-item.component';
+
+import { AppareilService } from './services/apareil.services';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFirstComponent,
     AppareilComponent,
-    PostListComponent,
-    PostListItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AppareilService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
